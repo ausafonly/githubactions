@@ -29,7 +29,7 @@ jobs:
 
       - name: Installing modules for pipeline
         shell: powershell
-        run: Install-Module Datum -Force -Verbose; Install-PackageProvider -Name nuget -Force; Install-Module Chocolatey -Force; Install-ChocolateySoftware; Install-ChocolateyPackage -Name git -Force; Install-ChocolateyPackage -Name GitVersion.Portable
+        run: Install-Module Datum -Force -Verbose; Install-Module Chocolatey -Force; Install-ChocolateySoftware; Install-ChocolateyPackage -Name git -Force; Install-ChocolateyPackage -Name GitVersion.Portable -Force
 
       - name: Testing PowerShell Version
         shell: powershell
@@ -37,4 +37,4 @@ jobs:
 
       - name: Running build process
         shell: powershell
-        run: . .\build.ps1 -ResolveDependency
+        run: . .\build.ps1
