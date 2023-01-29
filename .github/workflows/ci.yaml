@@ -23,9 +23,9 @@ jobs:
       - uses: actions/checkout@v3
 
       # Runs a single command using the runners shell
-      - name: Installing Datum module
+      - name: Installing modules for pipeline
         shell: powershell
-        run: Install-Module Datum -Verbose
+        run: Install-Module Datum -Verbose; Install-PackageProvider -Name nuget -Force; Install-Module Chocolatey -Force; Install-ChocolateySoftware; Install-ChocolateyPackage -Name git -Force; Install-ChocolateyPackage -Name GitVersion.Portable
         
       - name: Testing PowerShell Version
         shell: powershell
