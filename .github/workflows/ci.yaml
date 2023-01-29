@@ -27,6 +27,10 @@ jobs:
         shell: powershell
         run: Install-Module Datum -Verbose
         
-      - name: Running build process
+      - name: Testing PowerShell Version
         shell: powershell
-        run: . .\build.ps1 -ResolveDependency
+        run: $PsVersiontable
+        
+#       - name: Running build process
+#         shell: powershell
+#         run: . .\build.ps1 -ResolveDependency
