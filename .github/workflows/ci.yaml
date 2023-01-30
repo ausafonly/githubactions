@@ -22,31 +22,18 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      # Runs a single command using the runners shell
-      # - name: Installing Nuget Package Provider
-      #   shell: powershell
-      #   run: Install-PackageProvider -Name nuget -Force
-
       - name: Installing Datum modules for pipeline
         shell: powershell
         run: Install-Module Datum -Force -Verbose
 
-      - name: Installing gitverson portal package
+      - name: Installing gitverson portable package
         shell: powershell
         run: choco install gitversion.portable -y
-
-      # - name: Installing Chocolatey Software
-      #   shell: powershell
-      #   run: Install-ChocolateySoftware
-
-      # - name: Installing Chocolatey Package
-      #   shell: powershell
-      #   run: Install-ChocolateyPackage -PackageName GitVersion.Portable -Force
 
       # - name: Testing packages and commands in PowerShell
       #   shell: powershell
       #   run: choco
 
-      - name: Running build process
+      - name: Running build Process
         shell: powershell
-        run: . .\build.ps1
+        run: .\build.ps1
