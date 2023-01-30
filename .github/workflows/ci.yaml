@@ -31,9 +31,9 @@ jobs:
       #   shell: powershell
       #   run: Install-Module Datum -Force -Verbose
 
-      # - name: Installing Remainig modules for pipeline
+      # - name: Installing gitverson portal package
       #   shell: powershell
-      #   run: Install-Module Chocolatey -Force
+      #   run: choco install gitversion.portable
 
       # - name: Installing Chocolatey Software
       #   shell: powershell
@@ -45,7 +45,7 @@ jobs:
 
       - name: Testing PowerShell Version
         shell: powershell
-        run: get-command Install-ChocolateyPackage
+        run: choco
 
       # - name: Running build process
       #   shell: powershell
