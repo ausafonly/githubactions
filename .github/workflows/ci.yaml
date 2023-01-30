@@ -33,7 +33,7 @@ jobs:
 
       - name: Installing gitverson portal package
         shell: powershell
-        run: choco install gitversion.portable
+        run: choco install gitversion.portable -y
 
       # - name: Installing Chocolatey Software
       #   shell: powershell
