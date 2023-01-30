@@ -35,9 +35,9 @@ jobs:
         shell: powershell
         run: Install-Module Chocolatey -Force
 
-      - name: Installing Chocolatey packages
-        shell: powershell
-        run: Install-ChocolateySoftware; Install-ChocolateyPackage -Name git -Force; Install-ChocolateyPackage -Name GitVersion.Portable -Force
+      # - name: Installing Chocolatey packages
+      #   shell: powershell
+      #   run: Install-ChocolateySoftware; Install-ChocolateyPackage -Name git -Force; Install-ChocolateyPackage -Name GitVersion.Portable -Force
 
       - name: Testing PowerShell Version
         shell: powershell
