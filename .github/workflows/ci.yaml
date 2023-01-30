@@ -23,13 +23,21 @@ jobs:
       - uses: actions/checkout@v3
 
       # Runs a single command using the runners shell
-      - name: Installing Package Provider
+      - name: Installing Nuget Package Provider
         shell: powershell
         run: Install-PackageProvider -Name nuget -Force
 
-      - name: Installing modules for pipeline
+      - name: Installing Chocolatey Package Provider
         shell: powershell
-        run: Install-Module Datum -Force -Verbose; Install-Module Chocolatey -Force; Install-ChocolateySoftware; Install-ChocolateyPackage -Name git -Force; Install-ChocolateyPackage -Name GitVersion.Portable -Force
+        run: Install-PackageProvider -Name nuget -Force
+
+      - name: Installing Datum modules for pipeline
+        shell: powershell
+        run: Install-Module Datum -Force -Verbose
+
+      - name: Installing Remainig modules for pipeline
+        shell: powershell
+        run: Install-Module Chocolatey -Force; Install-ChocolateySoftware; Install-ChocolateyPackage -Name git -Force; Install-ChocolateyPackage -Name GitVersion.Portable -Force
 
       - name: Testing PowerShell Version
         shell: powershell
