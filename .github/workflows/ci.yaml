@@ -26,10 +26,6 @@ jobs:
         shell: powershell
         run: Install-Module Datum -Force -Verbose
 
-      - name: Installing gitverson portable package
-        shell: powershell
-        run: choco install gitversion.portable -y
-
       # - name: Testing packages and commands in PowerShell
       #   shell: powershell
       #   run: choco
