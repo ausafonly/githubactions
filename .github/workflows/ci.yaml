@@ -45,7 +45,7 @@ jobs:
 
       - name: Testing PowerShell Version
         shell: powershell
-        run: Get-Module chocolatey -ListAvailable
+        run: get-command Install-ChocolateyPackage
 
       # - name: Running build process
       #   shell: powershell
