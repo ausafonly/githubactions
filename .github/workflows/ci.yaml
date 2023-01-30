@@ -27,13 +27,13 @@ jobs:
       #   shell: powershell
       #   run: Install-PackageProvider -Name nuget -Force
 
-      # - name: Installing Datum modules for pipeline
-      #   shell: powershell
-      #   run: Install-Module Datum -Force -Verbose
+      - name: Installing Datum modules for pipeline
+        shell: powershell
+        run: Install-Module Datum -Force -Verbose
 
-      # - name: Installing gitverson portal package
-      #   shell: powershell
-      #   run: choco install gitversion.portable
+      - name: Installing gitverson portal package
+        shell: powershell
+        run: choco install gitversion.portable
 
       # - name: Installing Chocolatey Software
       #   shell: powershell
@@ -43,10 +43,10 @@ jobs:
       #   shell: powershell
       #   run: Install-ChocolateyPackage -PackageName GitVersion.Portable -Force
 
-      - name: Testing PowerShell Version
-        shell: powershell
-        run: choco
-
-      # - name: Running build process
+      # - name: Testing packages and commands in PowerShell
       #   shell: powershell
-      #   run: . .\build.ps1
+      #   run: choco
+
+      - name: Running build process
+        shell: powershell
+        run: . .\build.ps1
