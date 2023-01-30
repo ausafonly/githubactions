@@ -27,10 +27,6 @@ jobs:
         shell: powershell
         run: Install-PackageProvider -Name nuget -Force
 
-      - name: Installing Chocolatey Package Provider
-        shell: powershell
-        run: Install-PackageProvider -Name nuget -Force
-
       - name: Installing Datum modules for pipeline
         shell: powershell
         run: Install-Module Datum -Force -Verbose
